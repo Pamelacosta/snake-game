@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Simple Snake Game</title>
+	<style type="text/css">
+		@import url('https://fonts.googleapis.com/css?family=Bowlby+One+SC|Roboto+Mono');
+
+		h1 {
+			font-family: 'Bowlby One SC', cursive;
+			font-size: 48px;
+		}
+
+		body {
+			background-color: #000;
+			display: block;
+			margin: 0 auto;
+			color: white;
+			text-align: center;
+		}
+
+		canvas {
+			border: solid gray;
+			width: auto;
+			height: 80%;
+			content: span;
+			display: none;
+			margin: auto;
+			transition: 1s;
+		}
+
+
+		#score {
+			font-family: 'Roboto Mono', monospace;
+			font-size: 24px;
+		}
+
+		button {
+			background-color: rgba(61, 49, 49, 0);
+			color: white;
+			border: solid white 4px;
+			border-radius: 1em;
+			font-family: 'Roboto Mono', monospace;
+			font-size: 24px;
+		}
+
+		button:hover {
+			background-color: rgba(160, 108, 108, 0.5);
+			cursor: pointer;
+		}
+	</style>
+</head>
+<body>
+	<h1>Snake Game</h1>
+	<div id="score"></div>
+	
+	<!-- Audio -->
+	<audio src="audio/death.ogg" id="deathSnd"></audio>
+	<audio src="audio/eat.ogg" id="eatSnd"></audio>
+	<audio src="audio/doing_good.ogg" id="doingGoodSnd"></audio>
+
+	<canvas id="snake_canvas" width="500" height="500"></canvas>
+
+	<script src="snake.js"></script>
+
+	<button id="start_game" onclick="startGame(); this.style.display = 'none';">Start Game</button>
+
+</body>
+</html>
